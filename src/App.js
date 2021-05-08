@@ -1,12 +1,12 @@
 import './App.css';
 import Img from './components/Img/Img';
 import Loader from './components/Loader';
-import Heading from './components/Heading';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <div className="app">
-      <Heading />
+      <Header />
       <Img />
     </div>
   );
