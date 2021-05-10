@@ -9,7 +9,6 @@ function Img() {
     useEffect(() => {
         fetchImgs();
     }, []);
-    console.log(imgs[0]?.urls)
 
     const fetchImgs = () => {
         const API = 'https://api.unsplash.com/';
@@ -30,7 +29,12 @@ function Img() {
             <div className='gal'>
                 {
                     imgs.map(img => (
-                        <img className='gal__img' src={img.urls?.thumb} key={img.id} alt="img" />
+                        <div key={img.id} className='gal__container'>
+                            <img className='gal__img' src={img.urls?.thumb} key={img.id} alt="img" />
+                            <div className='gal__desc'>
+                                <p>{img.alt_description ? img.alt_description : img.description}</p>
+                            </div>
+                        </div>
                         )
                     )
                 }
